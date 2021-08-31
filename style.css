@@ -1,0 +1,857 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    direction: rtl;
+}
+
+.header{
+    position: fixed;
+    width: 100%;
+    height: 60px;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    transition: .5s all ease-in-out;
+}
+.header .logo{
+    font-style: italic;
+    font-size: 50px;
+    cursor: pointer;
+    color: white;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.header .container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+    transition: 0.5s all ease-in-out;
+}
+
+.header.active{
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.header.active .container{
+    height: 80px;
+}
+
+.header ul{
+    display: flex;
+    list-style: none;
+}
+.header ul li{
+    cursor: pointer;
+    position: relative;
+    margin-left: 8px;
+    padding: 0 10px;
+    font-style: italic;
+    color: white;
+}
+
+.header ul li::after{
+    content: "";
+    left: 0;
+    background-color: #fff;
+   
+    bottom: -5px;
+    height: 2px;
+    position: absolute;
+    transition: 0.3s all ease-in-out;
+width: 0;
+}
+
+.header ul li:hover::after,
+.header ul li.active::after{
+    width: 100%;
+}
+.bars{
+    font-size: 30px;
+    color: white;
+    display: none;
+    cursor: pointer;
+}
+/* Main section style */
+
+.main{
+    background-image: url(./images/1.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+   
+}
+
+.main .container{
+    height: 100vh;
+    margin-bottom: 10%;
+}
+
+.title{
+    top: 50%;
+    position: absolute;
+   text-align: center;
+    color: white;
+}
+.title h2{
+    font-size: 50px;
+    margin-bottom: 20px;
+}
+.title .btn{
+    width: 130px;
+    height: 30px;
+    background-color: white;
+    border: none;
+    color: black;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+    font-style: italic;
+    transition: 0.5s;
+    padding: 0 10px;
+
+}
+.title .btn:hover{
+    opacity: 0.6;
+}
+
+/* Hadith section style */
+
+.hadith{
+    margin-bottom: 8%;
+   
+}
+.hadith h3{
+    text-align: center;
+    font-size: 30px;
+    color: green;
+    position: relative;
+    margin-bottom: 5%;
+    
+}
+
+.hadith h3::after,
+.hadith h3::before{
+    content: "";
+    left: 50%;
+    position: absolute;
+    background-color: green;
+    height: 2px;
+    transform: translateX(-50%);
+    margin-top: 10px;
+}
+.hadith h3::after{
+    width: 50px;
+    bottom: -10px;
+}
+.hadith h3::before{
+    width: 100px;
+    bottom: 0px;
+}
+
+.hadith_content{
+    min-height: 350px;
+    position: relative;
+    box-shadow: 4px 4px 4px 0 #d1d9e6 inset,
+    -4px -4px 4px 0px #d1d9e6 inset;
+    color: #232323;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 20px;
+    
+}
+.hadith_content .number{
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding: 10px 20px;
+    color: green;
+    background: transparent;
+
+}
+
+.hadith .buttons{
+    display: flex;
+    justify-content: space-between;
+}
+
+.hadith .buttons div{
+    background: linear-gradient(60deg , #66bb6a , #43ad47);
+    box-shadow: 0 4px 20px 0 rgba(0,0, 0, .14),
+    0 7px 10px -5px rgb(76, 175,88,.4);
+    color: #fff;
+    padding: 10px 20px;
+    cursor: pointer;
+
+}
+.prev,.next,.number{
+    background: green;
+    color: white;
+    border: none;
+    width: 115px;
+    height: 30px;
+    text-align: center;
+    padding: 0 10px;
+}
+.number{
+    background: wheat;
+    font-weight: bold;
+    color: black;
+}
+.buttons{
+    margin-top: 4%;
+   
+}
+
+/* Lecture sevtion style */
+
+.lecture{
+    margin-bottom: 7%;
+}
+.lecture h3{
+    text-align: center;
+    font-size: 30px;
+    color: green;
+    position: relative;
+    margin-bottom: 5%;
+    
+}
+
+.lecture h3::after,
+.lecture h3::before{
+    content: "";
+    left: 50%;
+    position: absolute;
+    background-color: green;
+    height: 2px;
+    transform: translateX(-50%);
+    margin-top: 10px;
+}
+.lecture h3::after{
+    width: 50px;
+    bottom: -10px;
+}
+.lecture h3::before{
+    width: 100px;
+    bottom: 0px;
+}
+
+.lecture_content{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+
+
+}
+ .lecture_content .left,
+ .lecture_content .right{
+     width: 48%;
+ }
+
+ .lecture_content .left .lec{
+     display: flex;
+     margin-bottom: 20px;
+     box-shadow: 0 0 5px rgba(0, 0, 0, 0.6);
+     padding:  20px;
+     transition: 0.5s;
+     cursor: pointer;
+     align-items: center;
+ }
+
+ .lec:hover{
+     transform: scale(.95);
+ }
+.lec .text{
+    width: calc(100%-150px);
+    color: #232323;
+}
+.text h4{
+    font-size: 15px;
+
+}
+.text p{
+    font-size: 17px;
+}
+ .lec img{
+     width: 120px;
+     height: 120px;
+     border-radius: 50%;
+     margin-right: auto;
+     margin-right: 70px;
+     object-fit: cover;
+
+
+ }
+ .right{
+     text-align: center;
+     position: sticky;
+     top: 0;
+ }
+
+ .right iframe{
+     margin-bottom: 25px;
+     border-radius: 30px;
+     width: 100%;
+
+ }
+
+ /* Satrt section style */
+ .quran h3{
+    text-align: center;
+    font-size: 30px;
+    color: green;
+    position: relative;
+    margin-bottom: 5%;
+    
+}
+
+.quran h3::after,
+.quran h3::before{
+    content: "";
+    left: 50%;
+    position: absolute;
+    background-color: green;
+    height: 2px;
+    transform: translateX(-50%);
+    margin-top: 10px;
+}
+.quran h3::after{
+    width: 50px;
+    bottom: -10px;
+}
+.quran h3::before{
+    width: 100px;
+    bottom: 0px;
+}
+.quran{
+    margin-bottom: 6%;
+}
+.quran_content{
+    display: flex;
+    justify-content: space-between;
+   flex-wrap: wrap;
+   transition: 0.5s ease-in-out;
+}
+
+.quran_content .surah{
+    min-height: 100px;
+    min-width: 150px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.6);
+    padding: 10 20px;
+    text-align: center;
+    font-weight: bold;
+    cursor: pointer;
+    margin-left: 10px;
+    margin-bottom: 30px;
+    
+}
+.quran_content .surah:hover{
+    transform: scale(.95);
+}
+
+.ayat_popup{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+    overflow-y: scroll;
+    background-color: #fff;
+    transform: translateX(100%);
+}
+.ayat_popup.active{
+    transform: translateX(0);
+    transition: .7s  transform ease-in-out;
+}
+.close{
+    position: sticky;
+    top:5px;
+    right: 10px;
+    width: 40px;
+    height: 40px;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.6);
+    font-size: 23px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.ayat_popup .ayat_content{
+   padding: 20px;
+   width: 100%;
+   margin-top: 20px;
+   margin-right: 40px;
+   text-align: center;
+
+}
+.ayat_content p{
+    line-height: 2;
+    width: 100%;
+    border-bottom: 2px solid green;
+    margin-bottom: 10px;
+}
+.ayat_popup ::-webkit-scrollbar{
+    width: 10px;
+    background-color: green;
+}
+.ayat_popup ::-webkit-scrollbar-thumb{
+    background-color: #fff;
+}
+
+
+
+/* pray time */
+.praytime h3{
+    text-align: center;
+    font-size: 30px;
+    color: green;
+    position: relative;
+    margin-bottom: 5%;
+    
+}
+
+.praytime h3::after,
+.praytime h3::before{
+    content: "";
+    left: 50%;
+    position: absolute;
+    background-color: green;
+    height: 2px;
+    transform: translateX(-50%);
+    margin-top: 10px;
+}
+.praytime h3::after{
+    width: 50px;
+    bottom: -10px;
+}
+.praytime h3::before{
+    width: 100px;
+    bottom: 0px;
+}
+
+.praytime .cards{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.praytime .cards .card{
+    width: 250px;
+    min-height: 350px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.6);
+    padding: 30px 20px;
+    margin: 20px auto;
+    
+
+}
+.card .circle{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.circle svg{
+    width: 210px;
+    height: 210px;
+
+    
+}
+
+.circle svg circle{
+    fill: none;
+    stroke: #43ad47;
+    width: 100%;
+    height: 100%;
+    stroke-width: 10;
+    transform: translate(5px,5px);
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    animation: dash 3s linear infinite;
+    position: relative;
+}
+.circle .time{
+    position: absolute;
+    font-size: 40px;
+    color: green;
+}
+.card p{
+    font-weight: bold;
+    text-align: center;
+    font-size: 30px;
+    color: green;
+    margin-top: 20px;
+    font-style: italic;
+}
+@keyframes dash {
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+
+  .site-footer
+{
+  background-color:#26272b;
+  padding:45px 0 20px;
+  font-size:15px;
+  line-height:24px;
+  color:#737373;
+}
+.site-footer hr
+{
+  border-top-color:#bbb;
+  opacity:0.5
+}
+.icons li a {
+    margin-bottom: 10px;
+    text-align: center;
+}
+.site-footer hr.small
+{
+  margin:20px 0
+}
+.site-footer h6
+{
+  color:#fff;
+  font-size:16px;
+  text-transform:uppercase;
+  margin-top:5px;
+  letter-spacing:2px
+}
+.site-footer a
+{
+  color:#737373;
+}
+.site-footer a:hover
+{
+  color:#3366cc;
+  text-decoration:none;
+}
+.row a{
+    color: #3366cc;
+}
+.footer-links
+{
+  padding-left:0;
+  list-style:none
+}
+.footer-links li
+{
+  display:block
+}
+.footer-links a
+{
+  color:#737373
+}
+.footer-links a:active,.footer-links a:focus,.footer-links a:hover
+{
+  color:#3366cc;
+  text-decoration:none;
+}
+.footer-links.inline li
+{
+  display:inline-block
+}
+.site-footer .social-icons
+{
+  text-align:right
+}
+.site-footer .social-icons a
+{
+  width:40px;
+  height:40px;
+  line-height:40px;
+  margin-left:6px;
+  margin-right:0;
+  border-radius:100%;
+  background-color:#33353d
+}
+.copyright-text
+{
+  margin:0
+}
+@media (max-width:991px)
+{
+  .site-footer [class^=col-]
+  {
+    margin-bottom:30px
+  }
+}
+@media (max-width:767px)
+{
+  .site-footer
+  {
+    padding-bottom:0
+  }
+  .site-footer .copyright-text,.site-footer .social-icons
+  {
+    text-align:center
+  }
+}
+.social-icons
+{
+  padding-left:0;
+  margin-bottom:0;
+  list-style:none
+}
+.social-icons li
+{
+  display:inline-block;
+  margin-bottom:4px
+}
+.social-icons li.title
+{
+  margin-right:15px;
+  text-transform:uppercase;
+  color:#96a2b2;
+  font-weight:700;
+  font-size:13px
+}
+.social-icons a{
+  background-color:#eceeef;
+  color:#818a91;
+  font-size:16px;
+  display:inline-block;
+  line-height:44px;
+  width:44px;
+  height:44px;
+  text-align:center;
+  margin-right:8px;
+  border-radius:100%;
+  -webkit-transition:all .2s linear;
+  -o-transition:all .2s linear;
+  transition:all .2s linear
+}
+.social-icons a:active,.social-icons a:focus,.social-icons a:hover
+{
+  color:#fff;
+  background-color:#29aafe
+}
+.social-icons.size-sm a
+{
+  line-height:34px;
+  height:34px;
+  width:34px;
+  font-size:14px
+}
+.social-icons a.facebook:hover
+{
+  background-color:#3b5998
+}
+.social-icons a.twitter:hover
+{
+  background-color:#00aced
+}
+.social-icons a.linkedin:hover
+{
+  background-color:#007bb6
+}
+.social-icons a.dribbble:hover
+{
+  background-color:#ea4c89
+}
+@media (max-width:767px)
+{
+  .social-icons li.title
+  {
+    display:block;
+    margin-right:0;
+    font-weight:600
+  }
+}
+
+.scrollbtn  {
+position: fixed;
+bottom: 0;
+right: 20px;
+color: white;
+width: 30px;
+height: 30px;
+background-color: green;
+border-radius: 50%;
+font-size: 10px;
+transition: 1s bottom ease-in-out;
+bottom: -50px;
+text-align: center;
+cursor: pointer;
+}
+.scrollbtn p{
+    margin-top: 7px;
+}
+.scrollbtn.active{
+    bottom: 20px;
+}
+
+/* REsponsive design */
+
+@media (max-width:1024px)
+{
+    .lecture_content .left, 
+.lecture_content .right {
+    width: 98%;
+}
+.bars{
+    display: block;
+    font-size: 25px;
+    margin-bottom: 10px;
+}
+.header ul{
+    position: fixed;
+    left: 0;
+    top: 80px;
+    width: 250px;
+    background-color: rgba(0, 0, 0, 0.6);
+    flex-direction: column;
+    padding: 0 50px;
+    text-align: center;
+    transform: translateX(-100%);
+    transition: 1s transform ease-in-out;
+}
+.header ul.active{
+    transform: translateX(0);
+}
+.header ul li{
+    margin: 15px 0;
+}
+}
+
+.listen{
+    margin-bottom: 7%;
+}
+.listen h3{
+    text-align: center;
+    font-size: 30px;
+    color: green;
+    position: relative;
+    margin-bottom: 5%;
+    
+}
+
+.listen h3::after,
+.listen h3::before{
+    content: "";
+    left: 50%;
+    position: absolute;
+    background-color: green;
+    height: 2px;
+    transform: translateX(-50%);
+    margin-top: 10px;
+}
+.listen h3::after{
+    width: 50px;
+    bottom: -10px;
+}
+.listen h3::before{
+    width: 100px;
+    bottom: 0px;
+}
+
+ .listen .container{
+     max-width: 1250px;
+     width: 100%;
+     padding: 0 15px;
+     margin: 0 auto;
+ }
+
+ .listen .player{
+    background: linear-gradient(to right, #000000, #434343);
+    position: sticky;
+    padding: 20px;
+    top: 0;
+    margin: 10px 0;
+    border-radius: 5px;
+    z-index: 1;
+
+ }
+ .ayatext{
+     font-size: 22px;
+     color: #fff;
+     text-align: center;
+     margin-bottom: 15px;
+     font-weight: bold;
+ }
+
+ .player audio{
+     width: 100%;
+    height: 40px;
+    margin: 15px 0;
+    
+ }
+
+ .audiobuttons{
+     width: 100%;
+     justify-content: space-between;
+     display: flex;
+     color: #fff;
+     cursor: pointer;
+     margin-top: 30px;
+     padding: 0 10px;
+     
+ }
+ .iconbtn{
+     background-color: #fff;
+     border-radius: 50%;
+     color: black;
+     font-weight: bold;
+     width: 50px;
+     height: 50px;
+     display: grid;
+     place-items: center;
+ }
+
+ .namesurah > div{
+    color: black;
+    background-color: #fff;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.6);
+    margin-bottom: 10px;
+    width: calc(100% - 90px);
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    padding: 10px 20px;
+    position: relative;
+    counter-increment: aya-counter;
+
+ }
+ .namesurah > div::after{
+     content: counter(aya-counter);
+     width: 80px;
+     height: 80px;
+    font-size: 25px;
+     color: black;
+     padding: 0 10px;
+     position: absolute;
+     left: -90;
+     top: 0;
+     border-radius: 50%;
+     display: grid;
+     place-items: center;
+     box-shadow: inherit;
+     transition: inherit;
+     background: inherit;
+
+ }
+
+ .namesurah > div::before{
+     content: "";
+     border: 7px solid transparent;
+     border-right-color:black;
+     left: -14px;
+     position: absolute;
+     transform: translateY(-50%);
+     top: 50%;
+
+ }
+
+ .namesurah > div:hover,
+ .namesurah > div:hover ::after{
+     background: linear-gradient(to right, #000000, #434343);
+     color: #fff;
+ }
